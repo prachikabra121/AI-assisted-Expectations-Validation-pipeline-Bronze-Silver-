@@ -13,30 +13,7 @@ This project implements an **end-to-end data quality pipeline** on **SQL Server*
 - **Failure Auditing**: Detailed failure reasons stored as JSON (`__failed_expectations`) with sample values.
 - **Local SQL Server Integration**: Uses Windows Authentication and creates Bronze DB automatically.
 
----
 
-## 🧱 Architecture
-
-```mermaid
-flowchart LR
-  subgraph Local Machine
-    FW[File Watcher / Ingestor]\n(data/incoming)
-    DB[(SQL Server - Bronze DB)]
-    AI[AI Expectation Generator]
-    UI[Streamlit UI]
-    VAL[Validator / Promoter]
-  end
-
-  FW -->|writes| DB.bronze[(bronze schema)]
-  AI -->|writes| DB.validation[(validation.control_expectations)]
-  UI -->|approves| DB.final_validations[(validation.final_validations)]
-  UI -->|promote| VAL
-  VAL -->|reads| DB.bronze
-  VAL -->|writes| DB.silver[(silver schema)]
-  VAL -->|logs| DB.audit[(validation_failures & run_log)]
-```
-
----
 
 ## 🧩 Folder Structure
 
