@@ -1,0 +1,10 @@
+python-dotenv
+pandas
+sqlalchemy
+pyodbc
+openai
+great_expectations
+streamlit
+watchdog
+pytest
+alembic

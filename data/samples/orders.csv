@@ -1,0 +1,5 @@
+order_id,customer_id,amount,order_date,email
+1,100,250.5,2025-01-10,alice@example.com
+2,101,99.99,2025-02-03,bob@sample.org
+3,100,,2025-02-10,invalid-email
+4,102,12.0,2025-03-01,charlie@example.net
